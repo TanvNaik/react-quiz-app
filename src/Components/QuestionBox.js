@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 
-const QuestionBox = ({question, answer, options, fixOption,questionKey}) => {
+const QuestionBox = ({questionBank, question, options, fixOption,questionKey}) => {
     const [opts, setOpts] = useState([]);
     
     useEffect(() => {
         setOpts([...options]);
-    }, []);
+    }, questionBank);
 
     const handleChange = (option)=>{
         setOpts([option]);
@@ -30,9 +30,9 @@ const QuestionBox = ({question, answer, options, fixOption,questionKey}) => {
                        <button onClick={
                            (e)=> {
                                fixOption(e.target.textContent,questionKey,e);
-                               handleChange(option)
+                               handleChange(option);
                            }
-                        } id={key} key={key}>{option}</button>
+                        } key={key}>{option}</button>
                    )
                })
                }

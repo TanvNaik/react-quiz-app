@@ -22,6 +22,10 @@ function App() {
       setQuestionBank(question);
     })
     setScore("");
+    setUserAnswers([{
+      index:"",
+      option:""
+    }])
   } 
   
   // updates userAnswers whenever user clicks on any option
@@ -70,7 +74,7 @@ function App() {
         {questionBank  && (
             <div className="main">
               {questionBank.map((question,questionKey) => 
-                <QuestionBox question={question.question} answer={question.answer} options={question.options} fixOption={fixOption} key ={questionKey} questionKey={questionKey}/>
+                <QuestionBox questionBank= {questionBank} question={question.question}  options={question.options} fixOption={fixOption} key ={questionKey} questionKey={questionKey}/>
               )}
               <div className="submit">
               <button className="submit-btn" onClick={checkAnswers}>Submit</button>
@@ -83,12 +87,12 @@ function App() {
         { score !=="" && (
           <div className="score-outer">
             <div className="score-inner">
-            <h3>You Scored: {score}</h3>
+            <h3>You Scored: {score}/5</h3>
             <button className="new-quiz" onClick={loadQuestions}>Play Again</button>
           </div></div>
         )}
 
-        {/*TODO: copyright section*/}
+        
         <div className="copyright">
           <div className="copyright-1">
               COPYRIGHT <CopyrightIcon className
