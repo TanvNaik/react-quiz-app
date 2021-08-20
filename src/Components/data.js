@@ -21,7 +21,7 @@ const questions = [
     },
     {
         id:nanoid(),
-        question: " 1 L is equal to how many grams?",
+        question: " 1 L is equal to how many mL?",
         options: ["100 ml", "50 ml", "1000 ml", "500 ml"],
         answer: "1000 ml",
     },
