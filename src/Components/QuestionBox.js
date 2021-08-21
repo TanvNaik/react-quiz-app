@@ -10,6 +10,7 @@ const QuestionBox = ({questionBank, question, options, fixOption,questionKey}) =
     const handleChange = (option)=>{
         setOpts([option]);
     }
+    
     return ( 
         <div className="qt-component">
            <div className="question">
